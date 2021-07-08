@@ -1,0 +1,44 @@
+import java.util.*;
+class rightleftrotation
+{
+public static void main(String args[])
+{
+	int size,i,t,x,y,te;
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter array size:");
+	size=sc.nextInt();
+	int ar[];
+	ar=new int[size];
+	System.out.println("enter array elements:");
+	for(i=0;i<size;i++)
+	{
+		ar[i]=sc.nextInt();
+	}
+	System.out.println("enter no. of right rotations(x):");
+	x=sc.nextInt();
+	System.out.println("enter no. of left rotations(y):");
+	y=sc.nextInt();
+	if(x>y)
+	for(int j=0;j<x-y;j++)
+	{
+		t=ar[size-1];
+		for(i=size-1;i>0;i--)
+		{
+			ar[i]=ar[i-1];
+		}
+		ar[0]=t;
+	}
+	else if(y>x) 
+	for(int k=0;k>y-x;k--)
+	{
+		te=ar[size-1];
+		for(i=size-1;i>0;i--)
+		{
+			ar[i]=ar[i-1];
+		}
+		ar[0]=te;
+	}
+	for(i=0;i<size;i++)
+	System.out.print(ar[i]+" ");
+}
+}
